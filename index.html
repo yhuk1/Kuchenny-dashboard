@@ -66,14 +66,25 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    ul, ol {
-      background: rgba(255,255,255,0.85);
-      padding: 1rem;
-      border-radius: 1rem;
+    .recipe-card {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 2rem;
+      border-radius: 1.5rem;
       max-width: 750px;
       margin: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-    h4 { margin-top: 2rem; }
+    .recipe-card h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .recipe-card p {
+      margin: 0.5rem 0;
+    }
+    .recipe-card ul, .recipe-card ol {
+      margin-top: 1rem;
+      padding-left: 1.5rem;
+    }
   </style>
 </head>
 <body>
@@ -84,40 +95,82 @@
 
   <div id="kuchnia" class="section" style="background-image: url('https://images.unsplash.com/photo-1543353071-873f17a7a088');">
     <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>🍽️ Przepisy</h2>
+    <h2>🍽️ Wybierz kategorię</h2>
+    <button class="sub-btn" onclick="showSection('obiady')">🥘 Obiady</button>
+    <button class="sub-btn" onclick="showSection('kolacje')">🌙 Kolacje</button>
+    <button class="sub-btn" onclick="showSection('desery')">🍰 Desery</button>
+  </div>
+
+  <div id="obiady" class="section" style="background-image: url('https://images.unsplash.com/photo-1606787641935-16ec42f9dfa3');">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
+    <h2>🥘 Obiady</h2>
+    <button class="sub-btn" onclick="showRecipe('pięć_smaków')">🥢 Wieprzowina 5 smaków (barowa)</button>
     <button class="sub-btn" onclick="showRecipe('zupa_paprykowa')">🥣 Zupa paprykowa</button>
   </div>
 
-  <div id="zupa_paprykowa" class="section" style="background-image: url('https://images.unsplash.com/photo-1613141412011-b984c5ecaae6');">
+  <div id="kolacje" class="section" style="background-image: url('https://images.unsplash.com/photo-1576402187877-8d55f0327684');">
     <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-    <h3>🥣 Zupa paprykowa</h3>
-    <p><strong>🕒 Czas przygotowania:</strong> ok. 45 minut</p>
-    <p><strong>🍽️ Porcje:</strong> 4–5</p>
+    <h2>🌙 Kolacje</h2>
+    <p style="text-align:center;">(Tu pojawią się przepisy na kolacje)</p>
+  </div>
 
-    <h4>✅ Składniki:</h4>
-    <ul>
-      <li>4 czerwone papryki</li>
-      <li>1 cebula</li>
-      <li>2 ząbki czosnku</li>
-      <li>1 duży ziemniak (opcjonalnie – dla zagęszczenia)</li>
-      <li>3 łyżki oliwy z oliwek</li>
-      <li>750 ml bulionu warzywnego lub drobiowego</li>
-      <li>1/2 łyżeczki słodkiej papryki</li>
-      <li>1/4 łyżeczki wędzonej papryki (opcjonalnie)</li>
-      <li>100 ml śmietany 18% (lub jogurtu naturalnego)</li>
-      <li>sól i pieprz do smaku</li>
-      <li>natka pietruszki lub grzanki do podania</li>
-    </ul>
+  <div id="desery" class="section" style="background-image: url('https://images.unsplash.com/photo-1510626176961-4bfb7e61d010');">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
+    <h2>🍰 Desery</h2>
+    <p style="text-align:center;">(Tu pojawią się przepisy na desery)</p>
+  </div>
 
-    <h4>🍳 Sposób przygotowania:</h4>
-    <ol>
-      <li>Umyj papryki, usuń gniazda nasienne i pokrój w paski. Cebulę i czosnek posiekaj, ziemniaka obierz i pokrój w kostkę.</li>
-      <li>Na dużej patelni lub w garnku rozgrzej oliwę. Podsmaż cebulę, po 2 minutach dodaj czosnek, następnie paprykę i ziemniaka.</li>
-      <li>Smaż przez 5–6 minut, aż warzywa lekko zmiękną.</li>
-      <li>Dodaj słodką i wędzoną paprykę, wymieszaj, a następnie wlej bulion. Gotuj pod przykryciem przez ok. 20–25 minut.</li>
-      <li>Zmiksuj zupę na gładki krem. Dodaj śmietanę (najpierw zahartuj) i dopraw solą oraz pieprzem.</li>
-      <li>Podawaj z grzankami, natką pietruszki lub kleksem śmietany.</li>
-    </ol>
+  <div id="pięć_smaków" class="section" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2');">
+    <button class="back-btn" onclick="showSection('obiady')">← Wróć</button>
+    <div class="recipe-card">
+      <h3>🥡 Wieprzowina pięć smaków – wersja barowa na wypasie</h3>
+      <p><strong>🕒 Czas:</strong> ok. 30–35 minut</p>
+      <p><strong>🍽️ Porcje:</strong> 2–3</p>
+      <p><strong>🔥 Styl:</strong> „chiński bar” – gęsty, aromatyczny sos z warzywami, mięsem i ryżem</p>
+      <h4>✅ Składniki</h4>
+      <ul>
+        <li>350–400 g wieprzowiny</li>
+        <li>1 łyżka mąki ziemniaczanej</li>
+        <li>1 papryka, 1/2 kapusty pekińskiej, 1 cebula, 1 marchewka</li>
+        <li>2 ząbki czosnku, kawałek imbiru, 3–5 grzybów mun</li>
+        <li>4–5 łyżek groszku, 2–3 łyżki kukurydzy</li>
+        <li>2 łyżki jasnego + 2 łyżki ciemnego sosu sojowego</li>
+        <li>1/2 łyżeczki przyprawy 5 smaków, 300 ml bulionu</li>
+        <li>1,5 łyżeczki mąki ziemniaczanej + 2 łyżki wody</li>
+        <li>olej rzepakowy i sezamowy</li>
+      </ul>
+      <h4>🍳 Przygotowanie</h4>
+      <ol>
+        <li>Namocz grzyby, pokrój składniki, zamarynuj mięso w sosie sojowym i obtocz w mące.</li>
+        <li>Smaż mięso, odłóż na bok. Podsmaż warzywa i grzyby.</li>
+        <li>Wlej sos i gotuj 3–4 min. Dodaj mięso, zagęść skrobią, skrop olejem sezamowym.</li>
+        <li>Podawaj z ryżem lub makaronem, posyp szczypiorkiem lub sezamem.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div id="zupa_paprykowa" class="section" style="background-image: url('https://images.unsplash.com/photo-1613141412011-b984c5ecaae6');">
+    <button class="back-btn" onclick="showSection('obiady')">← Wróć</button>
+    <div class="recipe-card">
+      <h3>🥣 Zupa paprykowa</h3>
+      <p><strong>🕒 Czas przygotowania:</strong> ok. 45 minut</p>
+      <p><strong>🍽️ Porcje:</strong> 4–5</p>
+      <h4>✅ Składniki:</h4>
+      <ul>
+        <li>4 czerwone papryki</li>
+        <li>1 cebula, 2 ząbki czosnku, 1 ziemniak</li>
+        <li>3 łyżki oliwy z oliwek</li>
+        <li>750 ml bulionu warzywnego lub drobiowego</li>
+        <li>1/2 łyżeczki słodkiej i 1/4 łyżeczki wędzonej papryki</li>
+        <li>100 ml śmietany 18%</li>
+        <li>sól, pieprz, natka pietruszki, grzanki</li>
+      </ul>
+      <h4>🍳 Sposób przygotowania:</h4>
+      <ol>
+        <li>Podsmaż warzywa na oliwie. Dodaj przyprawy, bulion i gotuj 25 min.</li>
+        <li>Zmiksuj na krem. Zahartuj śmietanę, dopraw, podawaj z grzankami.</li>
+      </ol>
+    </div>
   </div>
 
   <script>
@@ -126,12 +179,10 @@
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById(id).classList.add("active");
     }
-
     function goHome() {
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById("home").style.display = "flex";
     }
-
     function showRecipe(id) {
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById(id).classList.add("active");
