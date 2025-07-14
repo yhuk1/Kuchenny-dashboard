@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Kuchenny</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://images.unsplash.com/photo-1606788075761-0e4186f59d3a');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    nav a {
+      margin-right: 1rem;
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Dashboard Kuchenny</h1>
+    <nav>
+      <a onclick="showSection('przepis')">Przepis</a>
+      <a onclick="showSection('spizarnia')">Spiżarnia</a>
+      <a onclick="showSection('zakupy')">Zakupy</a>
+    </nav>
+
+    <div id="przepis" class="section active">
+      <h2>Wieprzowina w pięciu smakach (Kuchnia orientalna)</h2>
+      <p><strong>Składniki:</strong><br>
+        - 300 g wieprzowiny<br>
+        - 2 łyżki sosu sojowego<br>
+        - 1 łyżka pasty gochujang<br>
+        - 1 łyżeczka cukru trzcinowego<br>
+        - Imbir, czosnek, olej sezamowy
+      </p>
+      <p><strong>Sposób przygotowania:</strong><br>
+        Pokrój mięso, zamarynuj w składnikach i smaż na woku aż będzie karmelizowane. Podawaj z ryżem jaśminowym lub makaronem.
+      </p>
+      <button onclick="zuzyjSkladniki()">✔️ Gotowe – zużyj składniki</button>
+    </div>
+
+    <div id="spizarnia" class="section">
+      <h2>🧺 Twoja Spiżarnia</h2>
+      <textarea id="spizarniaText">Ziemniaki – 1 kg
+Cebula – 3 szt.
+Ryż jaśminowy – 1 kg
+Boczek – 200 g</textarea>
+      <button onclick="zapiszSpizarnie()">💾 Zapisz zmiany</button>
+    </div>
+
+    <div id="zakupy" class="section">
+      <h2>🛒 Lista Zakupów</h2>
+      <textarea id="zakupyText">Papryka
+Mleczko kokosowe
+Mięso mielone</textarea>
+      <button onclick="zapiszZakupy()">💾 Zapisz listę zakupów</button>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function zuzyjSkladniki() {
+      alert("Składniki zużyte! Zaktualizuj ręcznie spiżarnię jeśli trzeba.");
+    }
+
+    function zapiszSpizarnie() {
+      alert("Spiżarnia zapisana (lokalnie)");
+    }
+
+    function zapiszZakupy() {
+      alert("Lista zakupów zapisana (lokalnie)");
+    }
+  </script>
+</body>
+</html>
