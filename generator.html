@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator przepisu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1606788075761-51952b008c3a');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+        }
+        .container {
+            background-color: rgba(0,0,0,0.8);
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        button {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Generator przepisu z linku</h1>
+        <form id="recipeForm">
+            <input type="text" id="recipeUrl" placeholder="Wklej link do przepisu (np. z AniaGotuje.pl)" required>
+            <button type="submit">Generuj przepis</button>
+        </form>
+        <p class="note">⚠️ Działa najlepiej z przepisami z AniaGotuje.pl. Generowanie następuje lokalnie – plik HTML do pobrania pojawi się poniżej.</p>
+        <div id="result" style="margin-top:2rem;"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('recipeForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const url = document.getElementById('recipeUrl').value;
+            resultDiv.innerHTML = "⏳ Generowanie...";
+
+            if (!url.includes("aniagotuje.pl")) {
+                resultDiv.innerHTML = "❌ Ten link nie jest obsługiwany. Użyj linku z AniaGotuje.pl.";
+                return;
+            }
+
+            resultDiv.innerHTML = "✅ Link zapisany: <br>" + url + "<br><br>⚠️ Na tym etapie generowanie odbywa się ręcznie – przekaż ten link do ChatGPT, aby otrzymać gotowy plik HTML.<br><br>Wkrótce pojawi się automatyczne generowanie.";
+
+            // Można tu podpiąć fetch do lokalnego backendu lub serwera w przyszłości
+        });
+    </script>
+</body>
+</html>
