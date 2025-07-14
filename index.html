@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kuchenny Dashboard</title>
   <style>
     body {
@@ -13,18 +13,27 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      color: white;
     }
     .container {
-      max-width: 800px;
-      margin: 4rem auto;
+      display: flex;
+      max-width: 1100px;
+      margin: 3rem auto;
       background-color: rgba(0, 0, 0, 0.75);
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      color: white;
+    }
+    .left {
+      flex: 2;
+    }
+    .right {
+      flex: 1;
+      margin-left: 2rem;
     }
     h1 {
       text-align: center;
+      margin-bottom: 1.5rem;
     }
     ul {
       list-style: none;
@@ -41,17 +50,64 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .calendar {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .calendar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .calendar table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+
+    .calendar th,
+    .calendar td {
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .calendar th {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .calendar td {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Gotuj!</h1>
-    <ul>
-      <li><a href="/Kuchenny-dashboard/obiady.html">🍽️ Obiady</a></li>
-      <li><a href="/Kuchenny-dashboard/kolacje.html">🌙 Kolacje</a></li>
-      <li><a href="/Kuchenny-dashboard/desery.html">🍰 Desery</a></li>
-      <li><a href="/Kuchenny-dashboard/drinki.html">🍹 Drinki</a></li>
-    </ul>
+    <div class="left">
+      <h1>Gotuj!</h1>
+      <ul>
+        <li><a href="/Kuchenny-dashboard/obiady.html">🍽️ Obiady</a></li>
+        <li><a href="/Kuchenny-dashboard/kolacje.html">🌙 Kolacje</a></li>
+        <li><a href="/Kuchenny-dashboard/desery.html">🍰 Desery</a></li>
+        <li><a href="/Kuchenny-dashboard/drinki.html">🍹 Drinki</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="calendar">
+        <h2>Lipiec 2025</h2>
+        <table>
+          <tr><th>Po</th><th>Wt</th><th>Śr</th><th>Cz</th><th>Pt</th><th>Sb</th><th>Nd</th></tr>
+          <tr><td>30</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+          <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+          <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+          <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+          <tr><td>28</td><td>29</td><td>30</td><td>31</td><td>1</td><td>2</td><td>3</td></tr>
+        </table>
+      </div>
+    </div>
   </div>
 </body>
 </html>
