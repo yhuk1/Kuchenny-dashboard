@@ -1,44 +1,44 @@
-
 body {
-    background-color: #f3f3f3;
-    font-family: 'Segoe UI', sans-serif;
-    color: #222;
-    margin: 0;
-    padding: 2rem;
-    background-image: url('/Kuchenny-dashboard/images/kitchen-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
+
 .container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 2rem;
-    border-radius: 1rem;
-    max-width: 800px;
-    margin: auto;
-    color: white;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
+
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: disc;
+  padding-left: 1.5rem;
 }
-ul li {
-    margin: 0.5rem 0;
-}
+
 a {
-    color: #ffcc00;
-    text-decoration: none;
+  color: #87ceeb;
+  text-decoration: none;
 }
+
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
 .back-button {
-    display: inline-block;
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    color: #ffcc00;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  color: #333;
+  border-radius: 5px;
 }
