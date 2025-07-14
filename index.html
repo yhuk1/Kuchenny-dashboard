@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -22,17 +23,17 @@
       background-size: cover;
       background-position: center;
     }
-    .category-btn {
+    .category-btn, .sub-btn {
       background-color: rgba(255, 255, 255, 0.8);
       padding: 1rem 2rem;
       margin: 1rem;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       border-radius: 1rem;
       cursor: pointer;
       transition: transform 0.2s ease;
     }
-    .category-btn:hover {
+    .category-btn:hover, .sub-btn:hover {
       transform: scale(1.05);
     }
     .section {
@@ -60,25 +61,6 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    .gotuj-btn {
-      margin-top: 1rem;
-      padding: 1rem;
-      font-size: 1.2rem;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .gotuj-btn:active {
-      transform: scale(0.95);
-      background-color: #388e3c;
-    }
-    #zuzyte-info {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
@@ -90,61 +72,66 @@
 
   <div id="kuchnia" class="section" style="background-color: #fff4e6;">
     <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>Wieprzowina w pięciu smakach (Kuchnia orientalna)</h2>
-    <p><strong>Składniki:</strong></p>
-    <ul>
-      <li>300 g wieprzowiny</li>
-      <li>2 łyżki sosu sojowego</li>
-      <li>1 łyżka pasty gochujang</li>
-      <li>1 łyżeczka cukru trzcinowego</li>
-      <li>imbir, czosnek, olej sezamowy</li>
-    </ul>
-    <p><strong>Przygotowanie:</strong> Zamarynuj mięso, usmaż i podawaj z ryżem lub makaronem.</p>
-    <button class="gotuj-btn" onclick="zuzyjSkladniki()">✔️ Gotuj</button>
-    <div id="zuzyte-info"></div>
+    <h2>🍳 Kuchnia</h2>
+    <button class="sub-btn" onclick="showSub('obiady')">🍲 Obiady</button>
+    <button class="sub-btn" onclick="showSub('kolacje')">🥪 Kolacje</button>
+    <button class="sub-btn" onclick="showSub('desery')">🍰 Desery</button>
   </div>
 
-  <div id="zapasy" class="section" style="background-color: #e8f5e9;">
+  <div id="obiady" class="section" style="background-color: #fef9e7;">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
+    <h3>🍲 Obiady</h3>
+    <ul>
+      <li><strong>Wieprzowina w pięciu smakach</strong><br>Karmelizowane mięso z marynatą azjatycką</li>
+      <li><strong>Bulion drobiowy</strong><br>Włoszczyzna, kurczak, przyprawy – gotować 1.5 h</li>
+    </ul>
+  </div>
+
+  <div id="kolacje" class="section" style="background-color: #e8f5e9;">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
+    <h3>🥪 Kolacje</h3>
+    <ul>
+      <li><strong>Jajecznica</strong><br>Jajka, masło, sól. Smażyć wolno do kremowej konsystencji</li>
+      <li><strong>Tortilla z warzywami</strong><br>Placki z farszem z lodówki i serem</li>
+    </ul>
+  </div>
+
+  <div id="desery" class="section" style="background-color: #fdecea;">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
+    <h3>🍰 Desery</h3>
+    <ul>
+      <li><strong>Naleśniki</strong><br>Mąka, mleko, jajko, sól. Smażyć cienko, nadziewać na słodko</li>
+      <li><strong>Kisiel owocowy</strong><br>Woda, sok, cukier, skrobia. Zagotować i podać</li>
+      <li><strong>Budyń</strong><br>Mleko, cukier, skrobia. Gotować do zgęstnienia</li>
+    </ul>
+  </div>
+
+  <div id="zapasy" class="section" style="background-color: #e3f2fd;">
     <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>Twoja Spiżarnia</h2>
-    <textarea class="textarea-large" id="spizarniaText">
+    <h2>🧺 Twoja Spiżarnia</h2>
+    <textarea class="textarea-large">
 Ziemniaki – 1.2 kg
 Ryż jaśminowy – 1 kg
 Cebula – 3 szt.
 Czosnek – 2 główki
-Boczek – 200 g
-Kiełbasa swojska – 350 g
+Kiełbasa – 300 g
 Makaron udon
-Makaron ryżowy
 Kasza jęczmienna
-Kasza pęczak
 Cukier biały
-Cukier trzcinowy
-Mąka tortowa
-Skrobia ziemniaczana
-Placki tortilli
 Mleczko kokosowe
-Koncentrat pomidorowy
-Groszek Bonduelle
-Kukurydza Bonduelle
-Masło
-Margaryna
-Masło klarowane
-Pasty: gochujang, ssamjang, miso
-Sosy: rybny, sojowy jasny i ciemny, chili słodko-pikantny
+Placki tortilli
 Kostki rosołowe
-Olej sezamowy
-Kapusta zasmażana czerwona
-Przyprawy – pełna kolekcja</textarea>
+</textarea>
   </div>
 
-  <div id="zakupy" class="section" style="background-color: #e3f2fd;">
+  <div id="zakupy" class="section" style="background-color: #f3e5f5;">
     <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>Lista Zakupów</h2>
-    <textarea class="textarea-large" id="zakupyText">
+    <h2>🛒 Lista Zakupów</h2>
+    <textarea class="textarea-large">
 Papryka
-Mięso mielone
-Imbir świeży</textarea>
+Masło
+Ser żółty
+</textarea>
   </div>
 
   <script>
@@ -153,27 +140,13 @@ Imbir świeży</textarea>
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById(id).classList.add("active");
     }
-
+    function showSub(id) {
+      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
     function goHome() {
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById("home").style.display = "flex";
-    }
-
-    function zuzyjSkladniki() {
-      const spizarnia = document.getElementById("spizarniaText");
-      const skladniki = [
-        { nazwa: "wieprzowiny", ilosc: 300, jednostka: "g" }
-      ];
-      let tekst = spizarnia.value;
-      skladniki.forEach(s => {
-        const regex = new RegExp(`(\d+)\s*${s.jednostka}\s+${s.nazwa}`, 'i');
-        tekst = tekst.replace(regex, (match, liczba) => {
-          const nowa = Math.max(0, parseInt(liczba) - s.ilosc);
-          return `${nowa} ${s.jednostka} ${s.nazwa}`;
-        });
-      });
-      spizarnia.value = tekst;
-      document.getElementById("zuzyte-info").innerText = "✅ Zużyto: 300 g wieprzowiny";
     }
   </script>
 </body>
