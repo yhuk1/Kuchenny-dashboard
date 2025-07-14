@@ -2,281 +2,44 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Kuchenny</title>
+  <meta charset="UTF-8">
+  <title>Gotuj! – Kuchenny Dashboard</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe0b2, #ffccbc);
     }
-    .home {
+    .main {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1606788075761-759be3b2a83d');
-      background-size: cover;
-      background-position: center;
+      gap: 30px;
     }
-    .main-button {
-      font-size: 2.5rem;
-      padding: 2rem 4rem;
-      border: none;
-      border-radius: 1.5rem;
-      background-color: #ef6c00;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    }
-    .main-button:hover {
-      background-color: #d84315;
-      transform: scale(1.05);
-    }
-    .section {
-      display: none;
-      padding: 2rem;
-      min-height: 100vh;
-      background-size: cover;
-      background-position: center;
-      background-color: rgba(255,255,255,0.95);
-    }
-    .section.active {
+    a.button {
       display: block;
-    }
-    .sub-btn {
-      display: block;
-      margin: 1rem auto;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 1rem;
-      background-color: #ffe0b2;
-      cursor: pointer;
-    }
-    .back-btn {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #555;
+      padding: 20px 40px;
+      background-color: #ff7043;
       color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      font-size: 1.5em;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
     }
-    .recipe-card {
-      background: rgba(255, 255, 255, 0.92);
-      padding: 2rem;
-      border-radius: 1.5rem;
-      max-width: 750px;
-      margin: auto;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    .recipe-card h3 {
-      margin-top: 0;
-      text-align: center;
-    }
-    .recipe-card p {
-      margin: 0.5rem 0;
-    }
-    .recipe-card ul, .recipe-card ol {
-      margin-top: 1rem;
-      padding-left: 1.5rem;
+    a.button:hover {
+      background-color: #ff5722;
     }
   </style>
 </head>
 <body>
-
-  <div id="home" class="home">
-    <button class="main-button" onclick="showSection('kuchnia')">🍳 Gotuj!</button>
+  <div class="main">
+    <a class="button" href="obiady.html">🍽️ Obiady</a>
+    <a class="button" href="kolacje.html">🌙 Kolacje</a>
+    <a class="button" href="desery.html">🍰 Desery</a>
   </div>
-
-  <div id="kuchnia" class="section" style="background-image: url('https://images.unsplash.com/photo-1543353071-873f17a7a088');">
-    <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>🍽️ Wybierz kategorię</h2>
-    <button class="sub-btn" onclick="showSection('obiady')">🥘 Obiady</button>
-    <button class="sub-btn" onclick="showSection('kolacje')">🌙 Kolacje</button>
-    <button class="sub-btn" onclick="showSection('desery')">🍰 Desery</button>
-  </div>
-
-  <div id="obiady" class="section" style="background-image: url('https://images.unsplash.com/photo-1606787641935-16ec42f9dfa3');">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-    <h2>🥘 Obiady</h2>
-    <button class="sub-btn" onclick="showRecipe('pięć_smaków')">🥢 Wieprzowina 5 smaków (barowa)</button>
-    <button class="sub-btn" onclick="showRecipe('zupa_paprykowa')">🥣 Zupa paprykowa</button>
-  </div>
-
-  
-<div id="kolacje" class="section" style="background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187');">
-  <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-  <h2>🌙 Kolacje</h2>
-  <button class="sub-btn" onclick="showRecipe('kolacja_nalesniki')">🥞 Naleśniki z serem i owocami</button>
-</div>
-
-<div id="kolacja_nalesniki" class="section" style="background-image: url('https://images.unsplash.com/photo-1613141412011-5d8b7a2c9b9a');">
-  <button class="back-btn" onclick="showSection('kolacje')">← Wróć</button>
-  <div class="recipe-card">
-    <h3>🥞 Naleśniki z serem i owocami</h3>
-    <p><strong>🕒 Czas:</strong> 25 minut</p>
-    <p><strong>🍽️ Porcje:</strong> 4</p>
-    <h4>✅ Składniki:</h4>
-    <ul>
-      <li>2 jajka</li>
-      <li>1 szklanka mleka</li>
-      <li>3/4 szklanki mąki</li>
-      <li>1 łyżka cukru, szczypta soli</li>
-      <li>200 g twarogu + 2 łyżki cukru + 2 łyżki jogurtu</li>
-      <li>ulubione owoce (np. truskawki, banany), masło do smażenia</li>
-    </ul>
-    <h4>🍳 Przygotowanie:</h4>
-    <ol>
-      <li>Wymieszaj składniki na ciasto naleśnikowe. Odstaw na 10 minut.</li>
-      <li>Usmaż cienkie naleśniki na maśle z obu stron.</li>
-      <li>Wymieszaj twaróg z cukrem i jogurtem. Nałóż na naleśniki i zwiń w rulon.</li>
-      <li>Podawaj z owocami, polewą lub cukrem pudrem.</li>
-    </ol>
-  </div>
-</div>
- style="background-image: url('https://images.unsplash.com/photo-1576402187877-8d55f0327684');">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-    <h2>🌙 Kolacje</h2>
-    <p style="text-align:center;">(Tu pojawią się przepisy na kolacje)</p>
-  </div>
-
-  
-<div id="desery" class="section" style="background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');">
-  <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-  <h2>🍰 Desery</h2>
-  <button class="sub-btn" onclick="showRecipe('deser_kisiel')">🍓 Kisiel owocowy domowy</button>
-</div>
-
-<div id="deser_kisiel" class="section" style="background-image: url('https://images.unsplash.com/photo-1590080875976-d909d84ab5c6');">
-  <button class="back-btn" onclick="showSection('desery')">← Wróć</button>
-  <div class="recipe-card">
-    <h3>🍓 Kisiel owocowy domowy</h3>
-    <p><strong>🕒 Czas:</strong> 10–15 minut</p>
-    <p><strong>🍽️ Porcje:</strong> 3–4</p>
-    <h4>✅ Składniki:</h4>
-    <ul>
-      <li>2 szklanki owoców (np. maliny, truskawki, wiśnie – świeże lub mrożone)</li>
-      <li>2 szklanki wody</li>
-      <li>2–3 łyżki cukru</li>
-      <li>1,5 łyżki mąki ziemniaczanej</li>
-    </ul>
-    <h4>🍳 Przygotowanie:</h4>
-    <ol>
-      <li>Owoce zagotuj z cukrem i wodą (odlej 1/2 szklanki).</li>
-      <li>W odlanym płynie rozmieszaj mąkę ziemniaczaną.</li>
-      <li>Wlej mieszankę do gotujących się owoców i mieszaj do zgęstnienia.</li>
-      <li>Przelej do miseczek, ostudź – gotowe!</li>
-    </ol>
-  </div>
-</div>
- style="background-image: url('https://images.unsplash.com/photo-1510626176961-4bfb7e61d010');">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-    <h2>🍰 Desery</h2>
-    <p style="text-align:center;">(Tu pojawią się przepisy na desery)</p>
-  </div>
-
-  
-<div id="pięć_smaków" class="section" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2');">
-  <button class="back-btn" onclick="showSection('obiady')">← Wróć</button>
-  <div class="recipe-card">
-    <h3>🥡 Wieprzowina pięć smaków – wersja barowa na wypasie</h3>
-    <p><strong>🕒 Czas:</strong> ok. 30–35 minut</p>
-    <p><strong>🍽️ Porcje:</strong> 2–3</p>
-    <p><strong>🔥 Styl:</strong> „chiński bar” – gęsty, aromatyczny sos z warzywami, mięsem i ryżem</p>
-
-    <h4>✅ Składniki</h4>
-    <ul>
-      <li><strong>Mięso:</strong> 350–400 g wieprzowiny (karkówka, łopatka lub schab), pokrojone w cienkie paski</li>
-      <li>1 łyżka mąki ziemniaczanej (do obtoczenia)</li>
-      <li><strong>Warzywa i dodatki:</strong> 1 papryka, 1/2 główki kapusty pekińskiej, 1 cebula, 1 marchewka (w paski)</li>
-      <li>2 ząbki czosnku (posiekane), kawałek świeżego imbiru (opcjonalnie)</li>
-      <li>3–5 suszonych grzybów mun (namoczyć i pokroić w paski)</li>
-      <li>4–5 łyżek groszku (mrożony lub z puszki)</li>
-      <li>2–3 łyżki kukurydzy konserwowej (opcjonalnie)</li>
-      <li><strong>Sos:</strong> 2 łyżki jasnego sosu sojowego, 2 łyżki ciemnego sosu sojowego</li>
-      <li>1 łyżeczka octu ryżowego, 1/2 łyżeczki cukru trzcinowego</li>
-      <li>1/2 łyżeczki przyprawy pięciu smaków</li>
-      <li>300–350 ml wody lub lekkiego bulionu</li>
-      <li>1,5 łyżeczki mąki ziemniaczanej + 2 łyżki zimnej wody (do zagęszczenia)</li>
-      <li><strong>Olej:</strong> 1–2 łyżki oleju rzepakowego – do smażenia</li>
-      <li>1–2 łyżeczki oleju sezamowego – na koniec, dla smaku</li>
-      <li><strong>Do podania:</strong> ryż jaśminowy lub makaron ryżowy, opcjonalnie: szczypiorek, sezam</li>
-    </ul>
-
-    <h4>🍳 Sposób przygotowania</h4>
-    <ol>
-      <li>Grzyby mun zalej gorącą wodą na 10–15 minut. Odsącz, pokrój w paski.</li>
-      <li>Wieprzowinę obtocz w mące ziemniaczanej. Możesz lekko zamarynować ją w 1 łyżce jasnego sosu sojowego.</li>
-      <li>Rozgrzej olej rzepakowy w woku lub dużej patelni. Obsmaż mięso do lekkiego zarumienienia (ok. 4–5 min). Odłóż na talerz.</li>
-      <li>Na tej samej patelni smaż cebulę, czosnek i imbir. Dodaj marchewkę i paprykę, a po 2 minutach kapustę.</li>
-      <li>Dorzuć grzyby mun, groszek i kukurydzę. Mieszaj 1–2 minuty.</li>
-      <li>Wlej sos (woda/bulion + sosy sojowe + cukier + ocet + przyprawa 5 smaków). Gotuj całość 3–4 minuty.</li>
-      <li>Dodaj mięso z powrotem. Wlej mieszankę mąki ziemniaczanej z wodą i mieszaj, aż sos stanie się gęsty i błyszczący.</li>
-      <li>Na sam koniec skrop wszystko olejem sezamowym, wymieszaj i wyłącz ogień.</li>
-      <li>Podawaj z ryżem jaśminowym lub makaronem ryżowym. Posyp szczypiorkiem lub sezamem.</li>
-    </ol>
-  </div>
-
-  </div>
-
-  
-<div id="zupa_paprykowa" class="section" style="background-image: url('https://images.unsplash.com/photo-1613141412011-b984c5ecaae6');">
-  <button class="back-btn" onclick="showSection('obiady')">← Wróć</button>
-  <div class="recipe-card">
-    <h3>🥣 Zupa paprykowa</h3>
-    <p><strong>🕒 Czas przygotowania:</strong> ok. 45 minut</p>
-    <p><strong>🍽️ Porcje:</strong> 4–5</p>
-
-    <h4>✅ Składniki:</h4>
-    <ul>
-      <li>4 czerwone papryki</li>
-      <li>1 duży ziemniak (opcjonalnie – dla zagęszczenia)</li>
-      <li>1 cebula</li>
-      <li>2 ząbki czosnku</li>
-      <li>750 ml bulionu warzywnego lub drobiowego</li>
-      <li>3 łyżki oliwy z oliwek</li>
-      <li>1/2 łyżeczki słodkiej papryki</li>
-      <li>1/4 łyżeczki wędzonej papryki (opcjonalnie)</li>
-      <li>100 ml śmietany 18% (lub jogurtu naturalnego)</li>
-      <li>sól i pieprz do smaku</li>
-      <li>natka pietruszki lub grzanki do podania</li>
-    </ul>
-
-    <h4>🍳 Sposób przygotowania:</h4>
-    <ol>
-      <li>Umyj papryki, usuń gniazda nasienne i pokrój je w paski. Ziemniaka obierz i pokrój w kostkę. Cebulę i czosnek obierz oraz drobno posiekaj.</li>
-      <li>W dużym garnku rozgrzej oliwę z oliwek. Dodaj cebulę i podsmażaj przez 2–3 minuty, aż się zeszkli. Następnie dodaj czosnek i smaż jeszcze przez 30 sekund, uważając, żeby go nie przypalić.</li>
-      <li>Dodaj do garnka pokrojoną paprykę oraz ziemniaka. Podsmażaj razem przez około 5 minut, mieszając od czasu do czasu.</li>
-      <li>Dodaj słodką i wędzoną paprykę, wymieszaj całość, a następnie wlej gorący bulion. Przykryj garnek i gotuj zupę na średnim ogniu przez około 25 minut – do miękkości warzyw.</li>
-      <li>Zdejmij garnek z ognia. Zupę zmiksuj blenderem ręcznym na gładki krem. Jeśli jest zbyt gęsta, możesz dodać jeszcze trochę bulionu lub przegotowanej wody.</li>
-      <li>Zahartuj śmietanę: przelej ją do miseczki, dodaj 1–2 łyżki gorącej zupy i dokładnie wymieszaj, a następnie wlej śmietanę do garnka i dokładnie zamieszaj.</li>
-      <li>Dopraw zupę solą i pieprzem wedle uznania. Jeśli chcesz uzyskać bardziej intensywny smak, możesz dodać odrobinę chili lub ziół.</li>
-      <li>Zupę podawaj gorącą, udekorowaną posiekaną natką pietruszki i/lub grzankami. Można również dodać kleks śmietany lub kilka kropli oliwy z oliwek.</li>
-    </ol>
-  </div>
-</div>
-
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.getElementById("home").style.display = "none";
-      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-    function goHome() {
-      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
-      document.getElementById("home").style.display = "flex";
-    }
-    function showRecipe(id) {
-      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
-  </script>
 </body>
 </html>
