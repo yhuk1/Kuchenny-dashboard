@@ -9,110 +9,171 @@
       font-family: sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('https://images.unsplash.com/photo-1606788075761-0e4186f59d3a');
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1524592094714-0f0654e20314');
       background-size: cover;
       background-position: center;
-      color: #fff;
     }
-    .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      min-height: 100vh;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    nav a {
-      margin-right: 1rem;
-      color: #fff;
-      text-decoration: underline;
+    .category-btn {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 1rem 2rem;
+      margin: 1rem;
+      border: none;
+      font-size: 1.5rem;
+      border-radius: 1rem;
       cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .category-btn:hover {
+      transform: scale(1.05);
     }
     .section {
       display: none;
+      padding: 2rem;
     }
     .section.active {
       display: block;
     }
-    textarea, input {
+    .textarea-large {
       width: 100%;
-      padding: 0.5rem;
-      margin-top: 1rem;
-      border-radius: 8px;
-      border: none;
+      height: 300px;
       font-size: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid #ccc;
+      resize: vertical;
     }
-    button {
-      margin-top: 1rem;
+    .back-btn {
+      margin-bottom: 1rem;
       padding: 0.5rem 1rem;
-      font-size: 1rem;
       border: none;
+      background-color: #555;
+      color: #fff;
       border-radius: 8px;
+      cursor: pointer;
+    }
+    .gotuj-btn {
+      margin-top: 1rem;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
       background-color: #4CAF50;
       color: white;
+      border-radius: 1rem;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .gotuj-btn:active {
+      transform: scale(0.95);
+      background-color: #388e3c;
+    }
+    #zuzyte-info {
+      margin-top: 1rem;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>📋 Dashboard Kuchenny</h1>
-    <nav>
-      <a onclick="showSection('przepis')">Przepis</a>
-      <a onclick="showSection('spizarnia')">Spiżarnia</a>
-      <a onclick="showSection('zakupy')">Zakupy</a>
-    </nav>
+  <div id="home" class="home">
+    <button class="category-btn" onclick="showSection('kuchnia')">🍳 Kuchnia</button>
+    <button class="category-btn" onclick="showSection('zapasy')">🧺 Zapasy</button>
+    <button class="category-btn" onclick="showSection('zakupy')">🛒 Zakupy</button>
+  </div>
 
-    <div id="przepis" class="section active">
-      <h2>Wieprzowina w pięciu smakach (Kuchnia orientalna)</h2>
-      <p><strong>Składniki:</strong><br>
-        - 300 g wieprzowiny<br>
-        - 2 łyżki sosu sojowego<br>
-        - 1 łyżka pasty gochujang<br>
-        - 1 łyżeczka cukru trzcinowego<br>
-        - Imbir, czosnek, olej sezamowy
-      </p>
-      <p><strong>Sposób przygotowania:</strong><br>
-        Pokrój mięso, zamarynuj w składnikach i smaż na woku aż będzie karmelizowane. Podawaj z ryżem jaśminowym lub makaronem.
-      </p>
-      <button onclick="zuzyjSkladniki()">✔️ Gotowe – zużyj składniki</button>
-    </div>
+  <div id="kuchnia" class="section" style="background-color: #fff4e6;">
+    <button class="back-btn" onclick="goHome()">← Wróć</button>
+    <h2>Wieprzowina w pięciu smakach (Kuchnia orientalna)</h2>
+    <p><strong>Składniki:</strong></p>
+    <ul>
+      <li>300 g wieprzowiny</li>
+      <li>2 łyżki sosu sojowego</li>
+      <li>1 łyżka pasty gochujang</li>
+      <li>1 łyżeczka cukru trzcinowego</li>
+      <li>imbir, czosnek, olej sezamowy</li>
+    </ul>
+    <p><strong>Przygotowanie:</strong> Zamarynuj mięso, usmaż i podawaj z ryżem lub makaronem.</p>
+    <button class="gotuj-btn" onclick="zuzyjSkladniki()">✔️ Gotuj</button>
+    <div id="zuzyte-info"></div>
+  </div>
 
-    <div id="spizarnia" class="section">
-      <h2>🧺 Twoja Spiżarnia</h2>
-      <textarea id="spizarniaText">Ziemniaki – 1 kg
-Cebula – 3 szt.
+  <div id="zapasy" class="section" style="background-color: #e8f5e9;">
+    <button class="back-btn" onclick="goHome()">← Wróć</button>
+    <h2>Twoja Spiżarnia</h2>
+    <textarea class="textarea-large" id="spizarniaText">
+Ziemniaki – 1.2 kg
 Ryż jaśminowy – 1 kg
-Boczek – 200 g</textarea>
-      <button onclick="zapiszSpizarnie()">💾 Zapisz zmiany</button>
-    </div>
-
-    <div id="zakupy" class="section">
-      <h2>🛒 Lista Zakupów</h2>
-      <textarea id="zakupyText">Papryka
+Cebula – 3 szt.
+Czosnek – 2 główki
+Boczek – 200 g
+Kiełbasa swojska – 350 g
+Makaron udon
+Makaron ryżowy
+Kasza jęczmienna
+Kasza pęczak
+Cukier biały
+Cukier trzcinowy
+Mąka tortowa
+Skrobia ziemniaczana
+Placki tortilli
 Mleczko kokosowe
-Mięso mielone</textarea>
-      <button onclick="zapiszZakupy()">💾 Zapisz listę zakupów</button>
-    </div>
+Koncentrat pomidorowy
+Groszek Bonduelle
+Kukurydza Bonduelle
+Masło
+Margaryna
+Masło klarowane
+Pasty: gochujang, ssamjang, miso
+Sosy: rybny, sojowy jasny i ciemny, chili słodko-pikantny
+Kostki rosołowe
+Olej sezamowy
+Kapusta zasmażana czerwona
+Przyprawy – pełna kolekcja</textarea>
+  </div>
+
+  <div id="zakupy" class="section" style="background-color: #e3f2fd;">
+    <button class="back-btn" onclick="goHome()">← Wróć</button>
+    <h2>Lista Zakupów</h2>
+    <textarea class="textarea-large" id="zakupyText">
+Papryka
+Mięso mielone
+Imbir świeży</textarea>
   </div>
 
   <script>
     function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+      document.getElementById("home").style.display = "none";
+      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function goHome() {
+      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+      document.getElementById("home").style.display = "flex";
     }
 
     function zuzyjSkladniki() {
-      alert("Składniki zużyte! Zaktualizuj ręcznie spiżarnię jeśli trzeba.");
-    }
-
-    function zapiszSpizarnie() {
-      alert("Spiżarnia zapisana (lokalnie)");
-    }
-
-    function zapiszZakupy() {
-      alert("Lista zakupów zapisana (lokalnie)");
+      const spizarnia = document.getElementById("spizarniaText");
+      const skladniki = [
+        { nazwa: "wieprzowiny", ilosc: 300, jednostka: "g" }
+      ];
+      let tekst = spizarnia.value;
+      skladniki.forEach(s => {
+        const regex = new RegExp(`(\d+)\s*${s.jednostka}\s+${s.nazwa}`, 'i');
+        tekst = tekst.replace(regex, (match, liczba) => {
+          const nowa = Math.max(0, parseInt(liczba) - s.ilosc);
+          return `${nowa} ${s.jednostka} ${s.nazwa}`;
+        });
+      });
+      spizarnia.value = tekst;
+      document.getElementById("zuzyte-info").innerText = "✅ Zużyto: 300 g wieprzowiny";
     }
   </script>
 </body>
