@@ -2,15 +2,16 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Kuchenny</title>
   <style>
     body {
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f8f8f8;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1506354666786-959d6d497f1a');
+      background-size: cover;
+      background-position: center;
       color: #333;
     }
     .home {
@@ -18,120 +19,110 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1524592094714-0f0654e20314');
-      background-size: cover;
-      background-position: center;
-    }
-    .category-btn, .sub-btn {
+      height: 100vh;
       background-color: rgba(255, 255, 255, 0.8);
-      padding: 1rem 2rem;
-      margin: 1rem;
-      border: none;
-      font-size: 1.2rem;
-      border-radius: 1rem;
-      cursor: pointer;
-      transition: transform 0.2s ease;
     }
-    .category-btn:hover, .sub-btn:hover {
+    .main-button {
+      font-size: 2rem;
+      padding: 1.5rem 3rem;
+      border: none;
+      border-radius: 1rem;
+      background-color: #ff7043;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .main-button:hover {
+      background-color: #f4511e;
       transform: scale(1.05);
     }
     .section {
       display: none;
       padding: 2rem;
+      background-color: #fff8f0;
+      min-height: 100vh;
     }
     .section.active {
       display: block;
     }
-    .textarea-large {
-      width: 100%;
-      height: 300px;
-      font-size: 1rem;
-      padding: 1rem;
+    .sub-btn {
+      display: block;
+      margin: 1rem auto;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
       border-radius: 1rem;
-      border: 1px solid #ccc;
-      resize: vertical;
+      background-color: #ffe0b2;
+      cursor: pointer;
     }
     .back-btn {
+      display: inline-block;
       margin-bottom: 1rem;
       padding: 0.5rem 1rem;
-      border: none;
       background-color: #555;
-      color: #fff;
+      color: white;
+      border: none;
       border-radius: 8px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
+
   <div id="home" class="home">
-    <button class="category-btn" onclick="showSection('kuchnia')">🍳 Kuchnia</button>
-    <button class="category-btn" onclick="showSection('zapasy')">🧺 Zapasy</button>
-    <button class="category-btn" onclick="showSection('zakupy')">🛒 Zakupy</button>
+    <button class="main-button" onclick="showSection('kuchnia')">🍳 Wejdź do Kuchni</button>
   </div>
 
-  <div id="kuchnia" class="section" style="background-color: #fff4e6;">
+  <div id="kuchnia" class="section">
     <button class="back-btn" onclick="goHome()">← Wróć</button>
     <h2>🍳 Kuchnia</h2>
-    <button class="sub-btn" onclick="showSub('obiady')">🍲 Obiady</button>
-    <button class="sub-btn" onclick="showSub('kolacje')">🥪 Kolacje</button>
-    <button class="sub-btn" onclick="showSub('desery')">🍰 Desery</button>
+    <button class="sub-btn" onclick="showRecipe('obiad1')">🍲 Wieprzowina w pięciu smakach</button>
+    <button class="sub-btn" onclick="showRecipe('obiad2')">🍲 Bulion drobiowy</button>
+    <button class="sub-btn" onclick="showRecipe('kolacja1')">🥪 Jajecznica</button>
+    <button class="sub-btn" onclick="showRecipe('deser1')">🍰 Naleśniki</button>
   </div>
 
-  <div id="obiady" class="section" style="background-color: #fef9e7;">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-    <h3>🍲 Obiady</h3>
-    <ul>
-      <li><strong>Wieprzowina w pięciu smakach</strong><br>Karmelizowane mięso z marynatą azjatycką</li>
-      <li><strong>Bulion drobiowy</strong><br>Włoszczyzna, kurczak, przyprawy – gotować 1.5 h</li>
-    </ul>
+  <div id="obiad1" class="section">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
+    <h3>Wieprzowina w pięciu smakach</h3>
+    <ol>
+      <li>Pokrój 300 g wieprzowiny w paski.</li>
+      <li>Przygotuj marynatę: 2 łyżki sosu sojowego, 1 łyżka gochujang, 1 łyżeczka cukru trzcinowego, czosnek, imbir, olej sezamowy.</li>
+      <li>Zamarynuj mięso min. 20 min.</li>
+      <li>Smaż na dużym ogniu aż się zrumieni i karmelizuje.</li>
+      <li>Podawaj z ryżem lub makaronem.</li>
+    </ol>
   </div>
 
-  <div id="kolacje" class="section" style="background-color: #e8f5e9;">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-    <h3>🥪 Kolacje</h3>
-    <ul>
-      <li><strong>Jajecznica</strong><br>Jajka, masło, sól. Smażyć wolno do kremowej konsystencji</li>
-      <li><strong>Tortilla z warzywami</strong><br>Placki z farszem z lodówki i serem</li>
-    </ul>
+  <div id="obiad2" class="section">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
+    <h3>Bulion drobiowy</h3>
+    <ol>
+      <li>Włoszczyzna, porcja rosołowa, przyprawy, 2 l wody.</li>
+      <li>Gotuj na małym ogniu przez 1,5–2 godziny.</li>
+      <li>Przecedź, dopraw solą i pieprzem.</li>
+    </ol>
   </div>
 
-  <div id="desery" class="section" style="background-color: #fdecea;">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć</button>
-    <h3>🍰 Desery</h3>
-    <ul>
-      <li><strong>Naleśniki</strong><br>Mąka, mleko, jajko, sól. Smażyć cienko, nadziewać na słodko</li>
-      <li><strong>Kisiel owocowy</strong><br>Woda, sok, cukier, skrobia. Zagotować i podać</li>
-      <li><strong>Budyń</strong><br>Mleko, cukier, skrobia. Gotować do zgęstnienia</li>
-    </ul>
+  <div id="kolacja1" class="section">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
+    <h3>Jajecznica</h3>
+    <ol>
+      <li>Rozbij 3–4 jajka do miski, roztrzep.</li>
+      <li>Na patelni roztop 1 łyżkę masła.</li>
+      <li>Wlej jajka, smaż na małym ogniu, mieszaj do konsystencji kremowej.</li>
+    </ol>
   </div>
 
-  <div id="zapasy" class="section" style="background-color: #e3f2fd;">
-    <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>🧺 Twoja Spiżarnia</h2>
-    <textarea class="textarea-large">
-Ziemniaki – 1.2 kg
-Ryż jaśminowy – 1 kg
-Cebula – 3 szt.
-Czosnek – 2 główki
-Kiełbasa – 300 g
-Makaron udon
-Kasza jęczmienna
-Cukier biały
-Mleczko kokosowe
-Placki tortilli
-Kostki rosołowe
-</textarea>
-  </div>
-
-  <div id="zakupy" class="section" style="background-color: #f3e5f5;">
-    <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>🛒 Lista Zakupów</h2>
-    <textarea class="textarea-large">
-Papryka
-Masło
-Ser żółty
-</textarea>
+  <div id="deser1" class="section">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
+    <h3>Naleśniki</h3>
+    <ol>
+      <li>1 szklanka mleka, 1 szklanka mąki, 1 jajko, szczypta soli – wymieszaj.</li>
+      <li>Usmaż cienkie placki na dobrze rozgrzanej patelni z odrobiną oleju.</li>
+      <li>Nadziewaj serem, dżemem, owocami lub kakao.</li>
+    </ol>
   </div>
 
   <script>
@@ -140,13 +131,15 @@ Ser żółty
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById(id).classList.add("active");
     }
-    function showSub(id) {
-      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-    }
+
     function goHome() {
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       document.getElementById("home").style.display = "flex";
+    }
+
+    function showRecipe(id) {
+      document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
     }
   </script>
 </body>
