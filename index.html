@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard Kuchenny</title>
   <style>
     body {
@@ -20,27 +20,27 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.85);
     }
     .main-button {
-      font-size: 2rem;
-      padding: 1.5rem 3rem;
+      font-size: 2.5rem;
+      padding: 2rem 4rem;
       border: none;
-      border-radius: 1rem;
-      background-color: #ff7043;
+      border-radius: 1.5rem;
+      background-color: #ef6c00;
       color: white;
       cursor: pointer;
       transition: 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     }
     .main-button:hover {
-      background-color: #f4511e;
+      background-color: #d84315;
       transform: scale(1.05);
     }
     .section {
       display: none;
       padding: 2rem;
-      background-color: #fff8f0;
+      background-color: #fffaf4;
       min-height: 100vh;
     }
     .section.active {
@@ -71,57 +71,56 @@
 <body>
 
   <div id="home" class="home">
-    <button class="main-button" onclick="showSection('kuchnia')">🍳 Wejdź do Kuchni</button>
+    <button class="main-button" onclick="showSection('kuchnia')">🍳 Gotuj!</button>
   </div>
 
   <div id="kuchnia" class="section">
     <button class="back-btn" onclick="goHome()">← Wróć</button>
-    <h2>🍳 Kuchnia</h2>
-    <button class="sub-btn" onclick="showRecipe('obiad1')">🍲 Wieprzowina w pięciu smakach</button>
-    <button class="sub-btn" onclick="showRecipe('obiad2')">🍲 Bulion drobiowy</button>
-    <button class="sub-btn" onclick="showRecipe('kolacja1')">🥪 Jajecznica</button>
-    <button class="sub-btn" onclick="showRecipe('deser1')">🍰 Naleśniki</button>
+    <h2>🍽️ Przepisy</h2>
+    <button class="sub-btn" onclick="showRecipe('schabowy')">🥩 Schabowy</button>
+    <button class="sub-btn" onclick="showRecipe('zrazy')">🥩 Zrazy wołowe</button>
+    <button class="sub-btn" onclick="showRecipe('zupa_paprykowa')">🥣 Zupa paprykowa</button>
   </div>
 
-  <div id="obiad1" class="section">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
-    <h3>Wieprzowina w pięciu smakach</h3>
+  <div id="schabowy" class="section">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do przepisów</button>
+    <h3>Schabowy</h3>
     <ol>
-      <li>Pokrój 300 g wieprzowiny w paski.</li>
-      <li>Przygotuj marynatę: 2 łyżki sosu sojowego, 1 łyżka gochujang, 1 łyżeczka cukru trzcinowego, czosnek, imbir, olej sezamowy.</li>
-      <li>Zamarynuj mięso min. 20 min.</li>
-      <li>Smaż na dużym ogniu aż się zrumieni i karmelizuje.</li>
-      <li>Podawaj z ryżem lub makaronem.</li>
+      <li>Pokrój schab na plastry o grubości około 1–1,5 cm.</li>
+      <li>Rozbij tłuczkiem do mięsa na cienkie kotlety.</li>
+      <li>Oprósz każdy kotlet solą i pieprzem.</li>
+      <li>Przygotuj trzy talerze: jeden z mąką, jeden z roztrzepanym jajkiem, jeden z bułką tartą.</li>
+      <li>Każdy kotlet panieruj w kolejności: mąka → jajko → bułka tarta.</li>
+      <li>Na patelni rozgrzej smalec lub olej (około 1 cm warstwa tłuszczu).</li>
+      <li>Smaż kotlety po 2–3 minuty z każdej strony na złoty kolor.</li>
+      <li>Odsącz na ręczniku papierowym i podawaj z ziemniakami i surówką.</li>
     </ol>
   </div>
 
-  <div id="obiad2" class="section">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
-    <h3>Bulion drobiowy</h3>
+  <div id="zrazy" class="section">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do przepisów</button>
+    <h3>Zrazy wołowe</h3>
     <ol>
-      <li>Włoszczyzna, porcja rosołowa, przyprawy, 2 l wody.</li>
-      <li>Gotuj na małym ogniu przez 1,5–2 godziny.</li>
-      <li>Przecedź, dopraw solą i pieprzem.</li>
+      <li>Plastry wołowiny (np. z udźca) rozbij tłuczkiem.</li>
+      <li>Oprósz solą i pieprzem, posmaruj musztardą.</li>
+      <li>Na każdym plastrze połóż kawałek boczku, ogórka kiszonego i cebuli.</li>
+      <li>Zwiń w roladki, zepnij wykałaczką lub zwiąż nicią.</li>
+      <li>Obsmaż zrazy na mocno rozgrzanym tłuszczu z każdej strony.</li>
+      <li>Przełóż do garnka, zalej bulionem lub wodą, dodaj liść laurowy i ziele angielskie.</li>
+      <li>Duś pod przykryciem przez ok. 1,5 godziny aż będą miękkie.</li>
+      <li>Opcjonalnie zagęść sos mąką i dopraw do smaku.</li>
     </ol>
   </div>
 
-  <div id="kolacja1" class="section">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
-    <h3>Jajecznica</h3>
+  <div id="zupa_paprykowa" class="section">
+    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do przepisów</button>
+    <h3>Zupa paprykowa</h3>
     <ol>
-      <li>Rozbij 3–4 jajka do miski, roztrzep.</li>
-      <li>Na patelni roztop 1 łyżkę masła.</li>
-      <li>Wlej jajka, smaż na małym ogniu, mieszaj do konsystencji kremowej.</li>
-    </ol>
-  </div>
-
-  <div id="deser1" class="section">
-    <button class="back-btn" onclick="showSection('kuchnia')">← Wróć do Kuchni</button>
-    <h3>Naleśniki</h3>
-    <ol>
-      <li>1 szklanka mleka, 1 szklanka mąki, 1 jajko, szczypta soli – wymieszaj.</li>
-      <li>Usmaż cienkie placki na dobrze rozgrzanej patelni z odrobiną oleju.</li>
-      <li>Nadziewaj serem, dżemem, owocami lub kakao.</li>
+      <li>Pokrój 2–3 czerwone papryki, 1 cebulę i 2 ząbki czosnku.</li>
+      <li>Podsmaż cebulę i czosnek na łyżce oliwy, dodaj paprykę i smaż kilka minut.</li>
+      <li>Zalej 1 litrem bulionu, gotuj 20 minut.</li>
+      <li>Zblenduj zupę na gładki krem, dodaj 2–3 łyżki śmietany 18% i dopraw solą, pieprzem i papryką wędzoną.</li>
+      <li>Podawaj z grzankami lub natką pietruszki.</li>
     </ol>
   </div>
 
