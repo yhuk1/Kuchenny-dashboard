@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zupa pieczarkowa</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1601050690597-3a4c997c83fd');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+        .container {
+            background-color: rgba(0,0,0,0.7);
+            margin: 2rem auto;
+            max-width: 800px;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .meta {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li::before {
+            content: '🟢 ';
+        }
+        .steps {
+            counter-reset: step;
+        }
+        .steps li::before {
+            counter-increment: step;
+            content: counter(step) ". ";
+            color: #9ff;
+        }
+        .back {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .back a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            background: #444;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        .back a:hover {
+            background: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍄 Zupa pieczarkowa</h1>
+        <div class="meta">
+            ⏱️ Czas: ok. 40 minut | 🍽️ Porcje: 4 | 🥣 Styl: domowy klasyk z makaronem
+        </div>
+
+        <h2>✅ Składniki</h2>
+        <ul>
+            <li>500 g świeżych pieczarek</li>
+            <li>1 marchewka</li>
+            <li>1 pietruszka (korzeń)</li>
+            <li>1 mała cebula</li>
+            <li>2 ząbki czosnku</li>
+            <li>1 litr bulionu warzywnego lub drobiowego</li>
+            <li>2 łyżki masła klarowanego</li>
+            <li>1 łyżka oleju (opcjonalnie)</li>
+            <li>100 ml śmietanki 30% lub 18% do zup</li>
+            <li>100 g drobnego makaronu (np. nitki, muszelki)</li>
+            <li>sól, pieprz do smaku</li>
+            <li>szczypta tymianku</li>
+            <li>świeża natka pietruszki do podania</li>
+        </ul>
+
+        <h2>🍳 Przygotowanie – krok po kroku</h2>
+        <ul class="steps">
+            <li>Pieczarki dokładnie oczyść, pokrój w cienkie plasterki. Marchewkę i pietruszkę zetrzyj na tarce o grubych oczkach lub pokrój w cienkie słupki.</li>
+            <li>W dużym garnku rozgrzej masło klarowane (i ewentualnie olej). Wrzuć pokrojoną cebulę i czosnek – zeszklij przez 1–2 minuty.</li>
+            <li>Dodaj starte warzywa i smaż kolejne 2–3 minuty, mieszając od czasu do czasu.</li>
+            <li>Dodaj pieczarki i smaż do momentu, aż zaczną puszczać wodę i się lekko zrumienią (5–7 minut).</li>
+            <li>Wlej gorący bulion, dopraw solą, pieprzem i odrobiną tymianku. Gotuj pod przykryciem 15 minut na małym ogniu.</li>
+            <li>W międzyczasie ugotuj makaron osobno zgodnie z instrukcją na opakowaniu.</li>
+            <li>Do gotowej zupy dodaj śmietankę – wcześniej zahartuj ją kilkoma łyżkami gorącej zupy, aby się nie zwarzyła. Wlej do garnka, wymieszaj i gotuj jeszcze 2–3 minuty.</li>
+            <li>Na koniec sprawdź smak i ewentualnie dopraw. Podawaj z makaronem i posypką ze świeżej natki pietruszki.</li>
+        </ul>
+
+        <div class="back">
+            <a href="obiady.html">← Wróć do obiadów</a>
+        </div>
+    </div>
+</body>
+</html>
