@@ -2,46 +2,60 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>🌙 Kolacje</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolacje</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #ffe0b2, #ffccbc);
     }
-    .main {
-      padding: 40px;
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: #444;
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
     ul {
-      list-style: none;
-      padding: 0;
+      padding-left: 1.2rem;
     }
     li {
-      margin: 20px 0;
+      margin-bottom: 0.8rem;
     }
     a {
-      display: inline-block;
-      background: #ff7043;
-      padding: 15px 30px;
-      color: white;
-      border-radius: 10px;
+      color: #66ccff;
       text-decoration: none;
-      font-size: 1.3em;
     }
     a:hover {
-      background: #ff5722;
+      text-decoration: underline;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #ff66cc;
     }
   </style>
 </head>
 <body>
-  <div class="main">
-    <a href="index.html">← Wróć</a>
-    <h1>🌙 Kolacje</h1>
+  <div class="container">
+    <h1>Kolacje</h1>
     <ul>
-      <li><a href="kolacje/nalesniki.html">Naleśniki z serem i owocami</a></li>
+      
+<li>🥪 <a href="#">Grzanki z serem i szynką</a></li>
+<li>🍳 <a href="#">Jajka sadzone z warzywami</a></li>
+
     </ul>
+    <a class="back-button" href="/Kuchenny-dashboard/index.html">← Wróć</a>
   </div>
 </body>
 </html>
