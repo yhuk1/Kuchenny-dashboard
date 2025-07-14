@@ -2,47 +2,68 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>🍽️ Obiady</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom right, #ffe0b2, #ffccbc);
-    }
-    .main {
-      padding: 40px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 20px 0;
-    }
-    a {
-      display: inline-block;
-      background: #ff7043;
-      padding: 15px 30px;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.3em;
-    }
-    a:hover {
-      background: #ff5722;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Obiady</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1604909053239-9c3cd49d1b2c');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+        }
+        .container {
+            background-color: rgba(0,0,0,0.75);
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 1rem 0;
+        }
+        a {
+            display: block;
+            padding: 1rem;
+            background-color: #333;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #555;
+        }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-  <div class="main">
-    <a href="index.html">← Wróć</a>
-    <h1>🍽️ Obiady</h1>
-    <ul>
-      <li><a href="obiady/wieprzowina.html">Wieprzowina 5 smaków</a></li>
-      <li><a href="obiady/zupa_paprykowa.html">Zupa krem z papryki</a></li>
-    </ul>
-  </div>
+    <div class="container">
+        <a class="back-button" href="index.html">← Wróć</a>
+        <h1>Obiady</h1>
+        <ul>
+            <li><a href="obiady/wieprzowina_piec_smaków.html">Wieprzowina w pięciu smakach – wersja barowa</a></li>
+            <li><a href="obiady/zupa_paprykowa.html">Zupa krem z papryki</a></li>
+            <li><a href="obiady/zrazy.html">Zrazy wołowe – wersja na wypasie</a></li>
+        </ul>
+    </div>
 </body>
 </html>
