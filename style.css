@@ -1,11 +1,11 @@
 
 body {
-    background-color: #1e1e1e;
+    background-color: #f3f3f3;
     font-family: 'Segoe UI', sans-serif;
-    color: #ffffff;
+    color: #222;
     margin: 0;
     padding: 2rem;
-    background-image: url('/Kuchenny-dashboard/images/obiady-bg.jpg');
+    background-image: url('/Kuchenny-dashboard/images/kitchen-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,6 +16,7 @@ body {
     border-radius: 1rem;
     max-width: 800px;
     margin: auto;
+    color: white;
 }
 h1 {
     font-size: 2.5rem;
