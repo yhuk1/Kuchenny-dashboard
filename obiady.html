@@ -2,54 +2,63 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
   <title>Obiady</title>
+  <link rel="stylesheet" href="/Kuchenny-dashboard/style.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Food_Buffet_Background.jpg');
+      background-image: url('/Kuchenny-dashboard/images/tlo_obiady.jpg');
       background-size: cover;
       background-position: center;
-      margin: 0;
-      padding: 0;
-      color: white;
+      color: #fff;
+      padding: 20px;
     }
     .container {
-      max-width: 600px;
-      margin: 2rem auto;
-      background-color: rgba(0,0,0,0.75);
-      padding: 2rem;
-      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
     }
     h1 {
       text-align: center;
-      margin-bottom: 2rem;
     }
     ul {
+      font-size: 1.2em;
       list-style: none;
-      padding-left: 0;
+      padding: 0;
     }
-    li {
-      margin: 1rem 0;
+    ul li {
+      margin: 10px 0;
     }
-    a {
-      color: #ffcc00;
+    ul li a {
+      color: #00ffff;
       text-decoration: none;
-      font-size: 1.2rem;
+    }
+    ul li a:hover {
+      text-decoration: underline;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Obiady</h1>
+    <h1>🍽️ Obiady</h1>
     <ul>
-      <li>🥡 <a href="obiady/wieprzowina.html">Wieprzowina w pięciu smakach</a></li>
-      <li>🥣 <a href="obiady/zupa_paprykowa.html">Zupa paprykowa (krem)</a></li>
-      <li>🍄 <a href="obiady/zupa_pieczarkowa.html">Zupa pieczarkowa</a></li>
-      <li>🥘 <a href="obiady/leczo.html">Leczo klasyczne</a></li>
+      <li><a href="/Kuchenny-dashboard/obiady/wieprzowina.html">Wieprzowina w pięciu smakach</a></li>
+      <li><a href="/Kuchenny-dashboard/obiady/zupa_paprykowa.html">Zupa paprykowa</a></li>
+      <li><a href="/Kuchenny-dashboard/obiady/leczo.html">Leczo</a></li>
+      <li><a href="/Kuchenny-dashboard/obiady/stek_schabowy.html">Stek schabowy</a></li>
+      <li><a href="/Kuchenny-dashboard/obiady/poledwiczki_grzybowe.html">Polędwiczki w sosie grzybowym</a></li>
     </ul>
-  
-<a class="back-button" href="/Kuchenny-dashboard/index.html">← Wróć</a></div>
+    <a class="back-button" href="/Kuchenny-dashboard/index.html">← Wróć</a>
+  </div>
 </body>
 </html>
