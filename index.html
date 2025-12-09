@@ -1,87 +1,52 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuchenny Dashboard</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Food_Buffet_Background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 30px 20px;
-            background-color: rgba(0, 0, 0, 0.65);
-            border-radius: 15px;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .quote {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .nav-links a {
-            display: block;
-            margin: 8px 0;
-            padding: 10px;
-            background-color: #444;
-            border-radius: 8px;
-            text-decoration: none;
-            color: white;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: #666;
-        }
-
-        .calendar {
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Kuchenny Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f7;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .categories {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .category-button {
+      display: block;
+      padding: 18px 15px;
+      text-align: center;
+      text-decoration: none;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      font-size: 18px;
+      color: #333;
+    }
+    .category-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🍳 Gotuj!</h1>
-        <div class="quote" id="quote"></div>
-        <div class="nav-links">
-            <a href="obiady.html">🍲 Obiady</a>
-            <a href="kolacje.html">🍽️ Kolacje</a>
-            <a href="desery.html">🍰 Desery</a>
-            <a href="drinki.html">🍹 Drinki</a>
-        </div>
-        <div class="calendar">
-            <iframe src="https://calendar.google.com/calendar/embed?src=pl.polish%23holiday%40group.v.calendar.google.com&ctz=Europe%2FWarsaw"
-                    style="border:0" width="300" height="200" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </div>
-    <script>
-        const quotes = [
-            "Gotowanie to sztuka, jedzenie to przyjemność. – Anonim",
-            "Najlepsze wspomnienia powstają przy stole. – Anonim",
-            "Nie ma bardziej szczerej miłości niż miłość do jedzenia. – George Bernard Shaw",
-            "Kiedy gotujesz z sercem, smakuje każdemu. – Anonim",
-            "Jedzenie to nasz wspólny język. – James Beard",
-            "Kuchnia to miejsce, gdzie mieszkają wspomnienia. – Anonim"
-        ];
-        document.getElementById("quote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
-    </script>
+  <h1>Kuchenny Dashboard</h1>
+  <div class="categories">
+    <a class="category-button" href="obiady.html">Obiady</a>
+    <a class="category-button" href="kolacje.html">Kolacje</a>
+    <a class="category-button" href="desery.html">Desery</a>
+    <a class="category-button" href="drinki.html">Drinki</a>
+    <a class="category-button" href="dodatki.html">Dodatki</a>
+  </div>
 </body>
 </html>
